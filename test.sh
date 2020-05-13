@@ -1,0 +1,2 @@
+curl http://127.0.0.1:8000/query -d'{"host":"10.65.193.30","port":3306,"user":"root","password":"mysql","database":"","sqltext":"select ?","args":["@@version"]}'
+curl http://127.0.0.1:8000/query -d'{"host":"10.65.193.30","port":3306,"user":"root","password":"mysql","database":"","sqltext":"select @@version","args":[]}'

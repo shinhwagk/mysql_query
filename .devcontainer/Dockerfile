@@ -1,14 +1,10 @@
-#-------------------------------------------------------------------------------------------------------------
-# Copyright (c) Microsoft Corporation. All rights reserved.
-# Licensed under the MIT License. See https://go.microsoft.com/fwlink/?linkid=2090316 for license information.
-#-------------------------------------------------------------------------------------------------------------
+FROM python:3
 
-# Update the VARIANT arg in devcontainer.json to pick a Python version: 3, 3.8, 3.7, 3.6 
-# To fully customize the contents of this image, use the following Dockerfile instead:
-# https://github.com/microsoft/vscode-dev-containers/tree/v0.117.0/containers/python-3/.devcontainer/base.Dockerfile
-ARG VARIANT="3"
-FROM mcr.microsoft.com/vscode/devcontainers/python:0-${VARIANT}
+RUN pip install --upgrade pip -i https://mirrors.aliyun.com/pypi/simple
 
+RUN pip install black autopep8 -i https://mirrors.aliyun.com/pypi/simple
+
+RUN pip install mysql-connector-python fastapi uvicorn -i https://mirrors.aliyun.com/pypi/simple
 # [Optional] If your requirements rarely change, uncomment this section to add them to the image.
 #
 # COPY requirements.txt /tmp/pip-tmp/
